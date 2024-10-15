@@ -1,5 +1,5 @@
 public class Venta {
-    private final Producto producto;
+    private final Producto producto; // Relación con la clase Producto.
     private final int cantidad;
     private final double precioTotal;
 

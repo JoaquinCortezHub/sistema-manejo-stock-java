@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Cliente {
     private final String nombre;
     private final String id;
-    private final ArrayList<Venta> compras;
+    private final ArrayList<Venta> compras; //Relación de composición con la clase Venta.
 
     public Cliente(String nombre, String id) {
         this.nombre = nombre;

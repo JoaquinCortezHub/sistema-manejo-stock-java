@@ -15,6 +15,8 @@ public class Sistema {
 	public void iniciar() {
 		Scanner scanner = new Scanner(System.in);
 		boolean salir = false;
+		boolean productoExistente = false;
+		boolean ClienteExistente = false;
 
 		while (!salir) {
 			System.out.println("Bienvenido a la tienda de productos");
@@ -30,15 +32,29 @@ public class Sistema {
 				switch (opcion) {
 					case 1:
 						agregarProducto(scanner);
+						productoExistente = true;
 						break;
 					case 2:
-						mostrarProductos();
-						break;
+						if (!productoExistente) {
+							System.out.println("No se han agregado productos. Agregue un producto primero.");
+						} else {
+							mostrarProductos();
+						}
+							break;
 					case 3:
-						registrarVenta(scanner);
+						if (!productoExistente) {
+							System.out.println("No se han agregado productos. Agregue un producto primero.");
+						} else {
+							registrarVenta(scanner);
+							ClienteExistente = true;
+						}
 						break;
 					case 4:
-						mostrarClientesYCompras();
+						if (!ClienteExistente) {
+							System.out.println("No se han registrado ventas. Registre una venta primero.");
+						} else {
+							mostrarClientesYCompras();
+						}
 						break;
 					case 5:
 						salir = true;
